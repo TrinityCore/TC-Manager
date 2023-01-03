@@ -20,12 +20,12 @@ class Account extends Model
         'expansion' => 'int',
         'mutetime' => 'int',
         'locale' => 'int',
-        'recruiter' => 'int'
+        'recruiter' => 'int',
     ];
 
     protected $dates = [
         'joindate',
-        'last_login'
+        'last_login',
     ];
 
     protected $hidden = [

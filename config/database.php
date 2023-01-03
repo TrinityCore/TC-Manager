@@ -122,10 +122,9 @@ return [
             'password' => env('TC_PASSWORD', 'trinity'),
             'database' => env('TC_WORLD_DATABASE', 'world'),
         ],
-        /**
-         * END TrinityCore Configuration
-         */
-
+    /**
+     * END TrinityCore Configuration
+     */
     ],
 
     /*
