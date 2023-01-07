@@ -18,3 +18,11 @@ composer install && \
 # start up php server
 cd public && php -S localhost:8080
 ```
+
+Front end assets need to be built, which can be achieved using NPM/NPX.
+```shell
+npm install
+
+# start hot reload service
+npx mix watch
+```
