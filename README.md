@@ -19,10 +19,19 @@ composer install && \
 cd public && php -S localhost:8080
 ```
 
-Front end assets need to be built, which can be achieved using NPM/NPX.
+Front end assets need to be built, which can be achieved using npm/npx.
 ```shell
+# requires node.js
+apt install nodejs
+node -v
+
+# if npm isn't already install globally
+npm install -g npm
+npm -v
+
+# otherwise, proceed here at the root of the project
 npm install
 
-# start hot reload service
+# start hot reload service and watch for resource changes
 npx mix watch
 ```
