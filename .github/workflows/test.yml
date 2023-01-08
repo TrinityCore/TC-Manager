@@ -10,8 +10,8 @@ jobs:
     runs-on: [ ubuntu-latest ]
 
     services:
-      mariadb:
-        image: mariadb:latest
+      mysql:
+        image: mysql:latest
         ports:
           - 3306:3306
         env:
@@ -29,9 +29,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Verify MariaDB connection
+      - name: Verify db connection
         env:
-          PORT: ${{ job.services.mariadb.ports[3306] }}
+          PORT: ${{ job.services.mysql.ports[3306] }}
         run: |
           while ! mysqladmin ping -h"127.0.0.1" -P"$PORT" --silent; do
             sleep 1
