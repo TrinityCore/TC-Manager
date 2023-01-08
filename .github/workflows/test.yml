@@ -45,10 +45,6 @@ jobs:
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.github', '.env');"
 
-      - name: Setup CI Authentication
-        run: |
-          composer config http-basic.nova.laravel.com ${{ secrets.NOVA_API_USER }} ${{ secrets.NOVA_API_KEY }}
-
       - name: Install dependencies
         uses: "ramsey/composer-install@v1"
         with:
