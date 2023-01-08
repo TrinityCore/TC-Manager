@@ -1,5 +1,4 @@
-name: Tracker v3 CI
-
+name: test
 on:
   push:
     branches: [ develop ]
@@ -14,7 +13,7 @@ jobs:
       mariadb:
         image: mariadb:latest
         ports:
-          - 3306
+          - 3306:3306
         env:
           MYSQL_USER: trinity
           MYSQL_PASSWORD: password
@@ -41,6 +40,7 @@ jobs:
       - uses: "shivammathur/setup-php@v2"
         with:
           php-version: "${{ matrix.php }}"
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
 
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.github', '.env');"
@@ -61,11 +61,4 @@ jobs:
         uses: mheap/phpunit-matcher-action@v1
 
       - name: Run Tests
-        env:
-          DB_PORT: ${{ job.services.mariadb.ports['3306'] }}
         run: ./vendor/bin/phpunit --colors=always
-
-      - uses: sarisia/actions-status-discord@v1
-        if: always()
-        with:
-          webhook: ${{ secrets.DISCORD_ADMIN_WEBHOOK }}
