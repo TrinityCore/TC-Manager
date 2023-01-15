@@ -6,19 +6,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class AccountBanned extends Model
+class RbacAccountPermission extends Model
 {
     use HasFactory;
 
     protected $connection = 'tc_auth';
+    public $incrementing = false;
+    public $timestamps = false;
 
     public function account(): BelongsTo
     {
-        return $this->belongsTo(Account::class, 'id');
+        return $this->belongsTo(Account::class, 'accountId');
     }
 
-    public function isActive()
+    public function rbac_permission(): BelongsTo
     {
-        return ($this->active);
+        return $this->belongsTo(RbacPermission::class, 'permissionId');
     }
 }

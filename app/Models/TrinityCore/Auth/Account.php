@@ -2,8 +2,10 @@
 
 namespace App\Models\TrinityCore\Auth;
 
+use App\Models\TrinityCore\Characters\Character;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Account extends Model
 {
@@ -40,27 +42,27 @@ class Account extends Model
         'sessionkey',
     ];
 
-    public function rbac_account_permissions()
+    public function rbac_account_permissions(): HasMany
     {
         return $this->hasMany(RbacAccountPermission::class, 'accountId');
     }
 
-    public function accesses()
+    public function access(): HasMany
     {
         return $this->hasMany(AccountAccess::class, 'id');
     }
 
-    public function characters()
+    public function characters(): HasMany
     {
         return $this->hasMany(Character::class, 'account');
     }
 
-    public function bans()
+    public function bans(): HasMany
     {
         return $this->hasMany(AccountBanned::class, 'id');
     }
 
-    public function mutes()
+    public function mutes(): HasMany
     {
         return $this->hasMany(AccountMuted::class, 'guid');
     }
