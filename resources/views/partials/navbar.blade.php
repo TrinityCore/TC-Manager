@@ -3,8 +3,10 @@
     <div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
 
         <div class="w-1/2 pl-2 md:pl-0">
-            <a class="text-gray-100 text-base xl:text-xl no-underline hover:no-underline font-bold" href="#">
-                <i class="fas fa-moon text-blue-400 pr-3"></i> TrinityCore Manager
+            <a class="text-gray-100 text-base xl:text-xl no-underline hover:no-underline font-bold flex align-middle"
+               href="#">
+                <img src="{{ asset('images/logo.svg') }}" width="50px" alt="" class="inline-block">
+                <span>TrinityCore Manager</span>
             </a>
         </div>
         <div class="w-1/2 pr-0">
