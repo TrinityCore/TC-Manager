@@ -1,6 +1,7 @@
 ## TrinityCore Manager
 
-Web interface for exploring a TrinityCore server installation. Currently this is intended to support `3.3.5a`
+Web interface for exploring a TrinityCore server installation. This is intended to support `3.3.5a`, and does not 
+include any seeders; a fully-built TrinityCore server with associated databases should already exist.
 
 ### Installation
 
