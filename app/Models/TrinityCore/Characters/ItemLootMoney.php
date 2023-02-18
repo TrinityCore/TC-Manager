@@ -10,5 +10,17 @@ class ItemLootMoney extends Model
     use HasFactory;
 
     protected $connection = 'tc_char';
+    protected $table = 'item_loot_money';
     public $incrementing = false;
+    public $timestamps = false;
+
+    protected $casts = [
+        'container_id' => 'int',
+        'money' => 'int'
+    ];
+
+    protected $fillable = [
+        'container_id',
+        'money'
+    ];
 }

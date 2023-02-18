@@ -10,5 +10,12 @@ class UpdateInclude extends Model
     use HasFactory;
 
     protected $connection = 'tc_char';
+    protected $table = 'updates_include';
+    protected $primaryKey = 'path';
     public $incrementing = false;
+    public $timestamps = false;
+
+    protected $fillable = [
+        'state'
+    ];
 }

@@ -10,5 +10,22 @@ class PvpStatsBattleground extends Model
     use HasFactory;
 
     protected $connection = 'tc_char';
-    public $incrementing = false;
+    public $timestamps = false;
+
+    protected $casts = [
+        'winner_faction' => 'int',
+        'bracket_id' => 'int',
+        'type' => 'int'
+    ];
+
+    protected $dates = [
+        'date'
+    ];
+
+    protected $fillable = [
+        'winner_faction',
+        'bracket_id',
+        'type',
+        'date'
+    ];
 }

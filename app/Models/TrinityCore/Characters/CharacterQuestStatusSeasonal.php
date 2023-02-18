@@ -11,4 +11,14 @@ class CharacterQuestStatusSeasonal extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'quest' => 'int',
+        'event' => 'int'
+    ];
+
+    protected $fillable = [
+        'event'
+    ];
 }

@@ -11,4 +11,23 @@ class Instance extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+    protected $table = 'instance';
+
+    public $timestamps = false;
+
+    protected $casts = [
+        'id' => 'int',
+        'map' => 'int',
+        'resettime' => 'int',
+        'difficulty' => 'int',
+        'completedEncounters' => 'int'
+    ];
+
+    protected $fillable = [
+        'map',
+        'resettime',
+        'difficulty',
+        'completedEncounters',
+        'data'
+    ];
 }

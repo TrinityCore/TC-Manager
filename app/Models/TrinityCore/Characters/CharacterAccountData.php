@@ -11,4 +11,17 @@ class CharacterAccountData extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+
+    protected $casts = [
+        'guid' => 'int',
+        'type' => 'int',
+        'time' => 'int',
+        'data' => 'string'
+    ];
+
+    protected $fillable = [
+        'time',
+        'data'
+    ];
 }

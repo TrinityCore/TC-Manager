@@ -11,4 +11,16 @@ class CharacterDeclinedName extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int'
+    ];
+
+    protected $fillable = [
+        'genitive',
+        'dative',
+        'accusative',
+        'instrumental',
+        'prepositional'
+    ];
 }

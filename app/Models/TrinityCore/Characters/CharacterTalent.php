@@ -11,4 +11,10 @@ class CharacterTalent extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'spell' => 'int',
+        'talentGroup' => 'int'
+    ];
 }

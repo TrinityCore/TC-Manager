@@ -11,4 +11,16 @@ class CharacterAction extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $table = 'character_action';
+
+    protected $casts = [
+        'guid' => 'int',
+        'spec' => 'int',
+        'button' => 'int',
+        'action' => 'int',
+        'type' => 'int'
+    ];
+
+    protected $guarded = [];
 }

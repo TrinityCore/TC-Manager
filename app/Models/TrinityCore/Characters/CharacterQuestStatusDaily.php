@@ -11,4 +11,14 @@ class CharacterQuestStatusDaily extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'quest' => 'int',
+        'time' => 'int'
+    ];
+
+    protected $fillable = [
+        'time'
+    ];
 }

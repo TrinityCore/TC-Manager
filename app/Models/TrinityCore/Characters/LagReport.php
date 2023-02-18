@@ -10,5 +10,28 @@ class LagReport extends Model
     use HasFactory;
 
     protected $connection = 'tc_char';
-    public $incrementing = false;
+    protected $primaryKey = 'reportId';
+    public $timestamps = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'lagType' => 'int',
+        'mapId' => 'int',
+        'posX' => 'float',
+        'posY' => 'float',
+        'posZ' => 'float',
+        'latency' => 'int',
+        'createTime' => 'int'
+    ];
+
+    protected $fillable = [
+        'guid',
+        'lagType',
+        'mapId',
+        'posX',
+        'posY',
+        'posZ',
+        'latency',
+        'createTime'
+    ];
 }

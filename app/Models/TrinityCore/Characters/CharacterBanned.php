@@ -11,4 +11,13 @@ class CharacterBanned extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'bandate' => 'int',
+        'unbandate' => 'int',
+        'active' => 'int'
+    ];
+
+    protected $guarded = [];
 }

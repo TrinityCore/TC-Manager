@@ -11,4 +11,9 @@ class CharacterQuestStatusMonthly extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'quest' => 'int'
+    ];
 }

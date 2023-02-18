@@ -11,4 +11,13 @@ class CharacterGift extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'item_guid' => 'int',
+        'entry' => 'int',
+        'flags' => 'int'
+    ];
+
+    protected $guarded = [];
 }

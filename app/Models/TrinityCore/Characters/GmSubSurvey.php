@@ -11,4 +11,16 @@ class GmSubSurvey extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+    protected $table = 'gm_subsurvey';
+    public $timestamps = false;
+
+    protected $casts = [
+        'questionId' => 'int',
+        'answer' => 'int'
+    ];
+
+    protected $fillable = [
+        'answer',
+        'answerComment'
+    ];
 }

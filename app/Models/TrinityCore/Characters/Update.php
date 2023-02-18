@@ -11,4 +11,21 @@ class Update extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+    protected $primaryKey = 'name';
+    public $timestamps = false;
+
+    protected $casts = [
+        'speed' => 'int'
+    ];
+
+    protected $dates = [
+        'timestamp'
+    ];
+
+    protected $fillable = [
+        'hash',
+        'state',
+        'timestamp',
+        'speed'
+    ];
 }

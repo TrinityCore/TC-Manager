@@ -10,5 +10,20 @@ class GuildRank extends Model
     use HasFactory;
 
     protected $connection = 'tc_char';
+    protected $table = 'guild_rank';
     public $incrementing = false;
+    public $timestamps = false;
+
+    protected $casts = [
+        'guildid' => 'int',
+        'rid' => 'int',
+        'rights' => 'int',
+        'BankMoneyPerDay' => 'int'
+    ];
+
+    protected $fillable = [
+        'rname',
+        'rights',
+        'BankMoneyPerDay'
+    ];
 }

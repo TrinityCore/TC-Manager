@@ -11,4 +11,12 @@ class CharacterArenaStat extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'slot' => 'int',
+        'matchMakerRating' => 'int'
+    ];
+
+    protected $guarded = [];
 }

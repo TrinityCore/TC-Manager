@@ -11,4 +11,21 @@ class CharacterBattlegroundData extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+
+    protected $casts = [
+        'guid' => 'int',
+        'instanceId' => 'int',
+        'team' => 'int',
+        'joinX' => 'float',
+        'joinY' => 'float',
+        'joinZ' => 'float',
+        'joinO' => 'float',
+        'joinMapId' => 'int',
+        'taxiStart' => 'int',
+        'taxiEnd' => 'int',
+        'mountSpell' => 'int'
+    ];
+
+    protected $guarded = [];
 }

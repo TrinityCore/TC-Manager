@@ -11,4 +11,12 @@ class CharacterAchievement extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'achievement' => 'int',
+        'date' => 'int'
+    ];
+
+    protected $guarded = [];
 }

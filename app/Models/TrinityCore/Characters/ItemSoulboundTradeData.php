@@ -10,5 +10,15 @@ class ItemSoulboundTradeData extends Model
     use HasFactory;
 
     protected $connection = 'tc_char';
+    protected $primaryKey = 'itemGuid';
     public $incrementing = false;
+    public $timestamps = false;
+
+    protected $casts = [
+        'itemGuid' => 'int'
+    ];
+
+    protected $fillable = [
+        'allowedPlayers'
+    ];
 }

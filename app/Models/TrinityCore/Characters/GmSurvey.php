@@ -11,4 +11,20 @@ class GmSurvey extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+    protected $table = 'gm_survey';
+    protected $primaryKey = 'surveyId';
+    public $timestamps = false;
+
+    protected $casts = [
+        'guid' => 'int',
+        'mainSurvey' => 'int',
+        'createTime' => 'int'
+    ];
+
+    protected $fillable = [
+        'guid',
+        'mainSurvey',
+        'comment',
+        'createTime'
+    ];
 }

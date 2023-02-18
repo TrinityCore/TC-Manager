@@ -10,5 +10,18 @@ class MailItem extends Model
     use HasFactory;
 
     protected $connection = 'tc_char';
+    protected $primaryKey = 'item_guid';
     public $incrementing = false;
+    public $timestamps = false;
+
+    protected $casts = [
+        'mail_id' => 'int',
+        'item_guid' => 'int',
+        'receiver' => 'int'
+    ];
+
+    protected $fillable = [
+        'mail_id',
+        'receiver'
+    ];
 }

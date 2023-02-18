@@ -9,11 +9,7 @@ class Character extends Model
 {
     use HasFactory;
 
-    protected $connection = 'tc_char';
     public $incrementing = false;
-
-    public $incrementing = false;
-    public $timestamps = false;
 
     protected $connection = 'tc_char';
     protected $primaryKey = 'guid';
@@ -133,7 +129,7 @@ class Character extends Model
         }
 
         if ($returnWrapped) {
-            $slug = str_slug($className);
+            $slug = \Str::slug($className);
             $proper = ucwords($className);
             return "<span class='{$slug}'>{$proper}</span>";
         }
@@ -179,7 +175,7 @@ class Character extends Model
                 break;
         }
 
-        return $slug ? str_slug($race) : $race;
+        return $slug ? \Str::slug($race) : $race;
     }
 
     /**

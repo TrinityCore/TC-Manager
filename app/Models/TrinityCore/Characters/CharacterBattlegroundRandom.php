@@ -11,4 +11,8 @@ class CharacterBattlegroundRandom extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+
+    protected $casts = [
+        'guid' => 'int'
+    ];
 }

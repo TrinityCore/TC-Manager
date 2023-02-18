@@ -10,5 +10,13 @@ class Respawn extends Model
     use HasFactory;
 
     protected $connection = 'tc_char';
-    public $incrementing = false;
+    protected $table = 'respawn';
+
+    protected $casts = [
+        'type' => 'int',
+        'spawnId' => 'int',
+        'respawnTime' => 'int',
+        'mapId' => 'int',
+        'instanceId' => 'int',
+    ];
 }

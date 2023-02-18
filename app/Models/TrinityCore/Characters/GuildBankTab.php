@@ -11,4 +11,16 @@ class GuildBankTab extends Model
 
     protected $connection = 'tc_char';
     public $incrementing = false;
+    public $timestamps = false;
+
+    protected $casts = [
+        'guildid' => 'int',
+        'TabId' => 'int'
+    ];
+
+    protected $fillable = [
+        'TabName',
+        'TabIcon',
+        'TabText'
+    ];
 }
